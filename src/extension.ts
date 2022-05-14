@@ -9,8 +9,9 @@ export async function activate(context: vscode.ExtensionContext) {
 	let client = await CDP();
 	let {Runtime, Page, Target} = client;
 	//Navigating to an arbitary website to get frameId, which can be used to construct a devtool page url
-	let {frameId, loaderId} = await Page.navigate({url:"https://baidu.com"});
-	let port:string = vscode.workspace.getConfiguration("vscode2devtool").get("port")!;
+	let arbitary_website:string = vscode.workspace.getConfiguration("vscode2devtool").get("arbitary_website")!;
+	let {frameId, loaderId} = await Page.navigate({url:arbitary_website});
+	let port:number = vscode.workspace.getConfiguration("vscode2devtool").get("port")!;
 	let devtool_url = "http://localhost:"+port+"/devtools/inspector.html?ws=localhost:"+port+"/devtools/page/"+frameId;
 	Target.createTarget({url:devtool_url});
 	
