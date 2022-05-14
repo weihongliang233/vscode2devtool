@@ -1,0 +1,70 @@
+{
+  "name": "vscode2devtool",
+  "displayName": "vscode2devtool",
+  "description": "",
+  "version": "0.0.1",
+  "repository": {"url": "https://github.com/weihongliang233/vscode2devtool.git"},
+  "publisher": "weihongliang233",
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:vscode2devtool.helloWorld",
+    "onCommand:vscode2devtool.commit"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode2devtool.commit",
+        "title": "Evaluate"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "Vscode2Devtool",
+        "properties": {
+          "vscode2devtool.port": {
+            "type": "number",
+            "default": 9222,
+            "description": "The port your chrome remote inspect on"
+          },
+          "vscode2devtool.arbitary_website": {
+            "type": "string",
+            "default": "https://www.baidu.com",
+            "description": "Every devtool instance is corresponding to a website, set the website you want to inspect on (or you can use an arbitary website)"
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.67.0",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "@vscode/test-electron": "^2.1.3",
+    "eslint": "^8.14.0",
+    "glob": "^8.0.1",
+    "mocha": "^9.2.2",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@types/chrome-remote-interface": "^0.31.4",
+    "chrome-remote-interface": "^0.31.2",
+    "vsce": "^2.7.0"
+  }
+}
