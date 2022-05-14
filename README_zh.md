@@ -77,3 +77,7 @@ Runtime.evaluate({expression: command_to_be_execute}) ;
 
 3. 查看对象需要先将它赋值给一个变量，如查看`{a:1,b:2}`，要`let obj = {a:1, b:2}; obj`
 
+## 类似的项目
+
+[acarabott/ChromeREPL: A Sublime Text plugin to execute JavaScript in Google Chrome (github.com)](https://github.com/acarabott/ChromeREPL)
+

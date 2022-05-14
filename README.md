@@ -76,3 +76,8 @@ At the same time, users are welcome to read the source code of this plugin (in f
    ````
 
 3. To view an object, you need to assign it to a variable first. For example, to view `{a:1,b:2}`, you need `let obj = {a:1, b:2}; obj`
+
+## Similar Project
+
+[acarabott/ChromeREPL: A Sublime Text plugin to execute JavaScript in Google Chrome (github.com)](https://github.com/acarabott/ChromeREPL)
+
