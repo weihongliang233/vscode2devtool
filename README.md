@@ -1,4 +1,4 @@
-# VScode2Devtool-REPL Chinese Documentation
+# VScode2Devtool-REPL Chinese Documentation|[中文文档](README_zh.md)
 
 ## Features
 
